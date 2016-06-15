@@ -1,0 +1,51 @@
+As mentioned in the question, the program takes name of two cities as the input and then runs the Dijkstra’s algorithm to get the shortest path.
+It returns the Path from source to the destination and the distance of shortest path.
+
+#Test Case 1:
+--------------
+
+Enter city #1: Mandya
+Enter city #2: Belgaum
+
+Shortest route and distance: Mandya-Tumkur-Belgaum, 124.0 km
+
+#Test Case 2:
+-------------
+Enter city #1: Mangalore
+Enter city #2: Chickmagalur
+
+Shortest route and distance: Mangalore-Mandya-Tumkur-Belgaum-Chickmagalur, 368.0 kms
+
+#Test Case 3:
+------------- 
+Enter city #1: 
+abc
+Enter city #2: 
+def
+Please Enter the correct City Name!!
+
+#Test case 4:
+-------------
+Enter city #1: 
+1
+Enter city #2: 
+2
+Please Enter the correct City Name!!
+
+#Test Case 5:
+-------------
+Enter city #1: 
+Chickmagalur
+Enter city #2: 
+Mysore
+
+Shortest route and distance: Chickmagalur-Belgaum-Bangalore-Mysore, 198.0 kms
+
+Note:
+
+The path from Tumkur to Mandya is such that there are two routes, one is 65 and other one is 65.5, looks like the cycle is there by mmistake so I have omitted that path. Rest all the things are taken care of.
+
+
+
+
+
