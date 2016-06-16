@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'PriorityQueue', '~> 0.1.2'
 gem 'simple_form'
+gem 'twitter-bootstrap-rails'
+gem 'rspec-rails', '~> 3.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
