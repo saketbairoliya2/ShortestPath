@@ -1,0 +1,18 @@
+<h1>Enter the city names here to get the smallest Path Between them</h1>
+<ul>
+	<li>Bangalore</li>
+	<li>Mysore</li>
+	<li>Mandya</li>
+	<li>Mangalore</li>
+	<li>Tumkur</li>
+	<li>Belgaum</li>
+	<li>Chickmagalur</li>
+</ul>
+<%= simple_form_for @cities do |f| %>
+  <%= f.input :from, label: 'Enter source city name ', error: 'From Name id Mandatory, please specify one' %>
+  <%= f.input :to, label: 'Enter destination city name', error: 'From Name id Mandatory, please specify one'  %>
+  <%= f.button :button do %>
+  Find city
+<% end %>
+<% end %>
+

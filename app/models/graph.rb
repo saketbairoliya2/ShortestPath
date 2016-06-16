@@ -1,5 +1,5 @@
 require 'priority_queue'
-class Graph
+class Graph < City
 	def initialize()
 		@vertices = {}
 	end
@@ -12,7 +12,10 @@ class Graph
 		maxint = (2**(0.size * 8 - 1) - 1) #To get the Maximum value. of integer type.
 		distance = {} #To store the distance of vertex from src node.
 		previous = {} #To keep the mark on the previous node in the tree.
+		dist_path = {} # To keep the path and the distance from src to dest.
 		nodes =  PriorityQueue.new
+
+		#puts "Here goes the src of Paths #{dest}"
 
 		@vertices.each do |vertex, value|
 			if vertex == src
@@ -37,10 +40,14 @@ class Graph
 					smallest = previous[smallest]
 				end
 				#return path
-				puts "Inside "
+				path.push(src)
+				path.reverse!
 				path.each do |name|
 					puts name
 				end
+				dist_path['path_src_dest'] = path
+				dist_path['dist_src_dest'] = distance[dest]
+				return dist_path
 			end
 
 			# To handle the error in case the Priority Queue Heap is not Correct.
@@ -59,19 +66,9 @@ class Graph
 			end
 		end
 
-		puts "Distance from source to dest is #{distance[dest]}"
-		return distance.inspect
+		#puts @cities
+		#puts "Distance from source to dest is #{distance[dest]}"
 	end
 end
-
-g = Graph.new
-g.add_vertex('Bangalore', {'Belgaum' => 24, 'Mysore' => 71})
-g.add_vertex('Mysore', {'Mandya' => 101, 'Mangalore' => 169, 'Tumkur' => 134})
-g.add_vertex('Mandya', {'Tumkur' => 65.5, 'Mangalore' => 141, 'Mysore' => 101})
-g.add_vertex('Mangalore', {'Mandya' => 141, 'Mysore' => 169})
-g.add_vertex('Tumkur', {'Mandya' => 65.5, 'Mysore' => 134, 'Belgaum' => 59})
-g.add_vertex('Belgaum', {'Bangalore' => 24, 'Chickmagalur' => 103, 'Tumkur' => 59})
-g.add_vertex('Chickmagalur', {'Belgaum' => 103})
-puts g.shortest_path('Mangalore', 'Chickmagalur');
 
 

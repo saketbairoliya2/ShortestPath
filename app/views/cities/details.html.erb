@@ -1,0 +1,11 @@
+<h1>Shortest Distance from <%= params[:id][:path_src_dest][0]%> to <%= params[:id][:path_src_dest][-1]%> is: 
+<%= params[:id][:dist_src_dest]%></h1>
+<h2>And the best route to take is:</h2>
+
+<ul>
+	<%= params[:id][:path_src_dest].each do |city| %>
+	<li><%= city %> </li>
+	<% end %>
+</ul>
+
+<%= link_to "Back", root_path %>
